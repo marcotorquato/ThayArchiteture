@@ -4,6 +4,7 @@
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Roboto", sans-serif;
   --font-secondary: "Work Sans", sans-serif;
+  --font-third: "Syncopate", sans-serif;
 }
 
 /* Colors */
@@ -11,6 +12,7 @@
   --color-default: #364d59;
   --color-primary: #ebba4c;
   --color-secondary: #ebba4c;
+  --color-third: #d4d7dc;
 }
 
 /* Smooth scroll behavior */
@@ -25,6 +27,7 @@ body {
   font-family: var(--font-default);
   color: var(--color-default);
   overflow-x: hidden;
+  background-color: var(--color-third);
 }
 
 a {
@@ -43,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-primary);
+  font-family: var(--font-third);
 }
 
 /*--------------------------------------------------------------
@@ -195,7 +198,7 @@ section {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: #fff;
+  background: var(--color-third);
   transition: all 0.6s ease-out;
 }
 
@@ -570,7 +573,7 @@ section {
 }
 
 .get-started .php-email-form {
-  background: #fff;
+  background: var(--color-third);
   padding: 30px;
   height: 100%;
 }
@@ -692,7 +695,7 @@ section {
 --------------------------------------------------------------*/
 .services .service-item {
   padding: 40px;
-  background: #fff;
+  background: var(--color-third);
   height: 100%;
 }
 
@@ -1741,15 +1744,17 @@ section {
 }
 
 #hero p {
-  color: ;
+ 
   margin: 15px 0 0 0;
   font-size: 26px;
-  font-family: "Poppins", sans-serif;
+  font: var(--font-third);
 }
 
 #hero p span {
-  color: #4f21cc;
+  color: #ebba4c;
   letter-spacing: 1px;
+  font-size: 26px;
+  
 }
 
 .hero .info {
@@ -1864,6 +1869,11 @@ section {
 .hero .carousel-control-prev:hover,
 .hero .carousel-control-next:hover {
   opacity: 0.9;
+}
+
+.social {
+  font-size: 26px;
+  padding-top: 100px;
 }
 
 /*--------------------------------------------------------------

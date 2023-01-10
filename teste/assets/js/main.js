@@ -193,16 +193,40 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
    * Hero type effect
    */
-const typed = select('.typed')
-if (typed) {
-  let typed_strings = typed.getAttribute('data-typed-items')
-  typed_strings = typed_strings.split(',')
-  new Typed('.typed', {
-    strings: typed_strings,
-    loop: true,
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 2000
-  });
-}
+const words = [
+	'Arquitetura',
+  '&',
+	'Design de Interiores'
+];
 
+const slicedWords = words.map(word => {
+	return word.split('');
+});
+
+const typed = document.querySelector('.typed');
+
+let dynamicWord = '';
+let wordIndex = 0;
+let letterIndex = 0;
+
+setInterval(() => {
+	
+	if(letterIndex < words[wordIndex].length) {
+		dynamicWord += slicedWords[wordIndex][letterIndex];
+		letterIndex += 1;
+		typed.innerText = dynamicWord;
+	} else if(letterIndex === words[wordIndex].length) {
+		dynamicWord = dynamicWord.split('');
+		dynamicWord.pop();
+		dynamicWord = dynamicWord.join('');
+		typed.innerText = dynamicWord;
+		
+		if(dynamicWord.length === 0) {
+			wordIndex += 1;
+			letterIndex = 0;
+		}
+	}
+
+	(wordIndex >= words.length) ? wordIndex = 0 : wordIndex;
+	
+}, 200);
