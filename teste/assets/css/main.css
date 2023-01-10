@@ -276,6 +276,8 @@ section {
   color: var(--color-primary);
 }
 
+
+
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
@@ -1736,6 +1738,18 @@ section {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   inset: 0;
+}
+
+#hero p {
+  color: ;
+  margin: 15px 0 0 0;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero p span {
+  color: #4f21cc;
+  letter-spacing: 1px;
 }
 
 .hero .info {
