@@ -12,7 +12,7 @@
   --color-default: #364d59;
   --color-primary: #ebba4c;
   --color-secondary: #ebba4c;
-  --color-third: #d4d7dc;
+  --color-third: #b2b5b8;
 }
 
 /* Smooth scroll behavior */
@@ -697,6 +697,7 @@ section {
   padding: 40px;
   background: var(--color-third);
   height: 100%;
+  text-align: center;
 }
 
 .services .service-item .icon {
