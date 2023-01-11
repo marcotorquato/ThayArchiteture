@@ -1,2 +1,0 @@
-# ThayArchiteture
- WebSite for Thayna
