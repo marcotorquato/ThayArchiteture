@@ -50,24 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
-
-  navDropdowns.forEach(el => {
-    el.addEventListener('click', function(event) {
-      if (document.querySelector('.mobile-nav-active')) {
-        event.preventDefault();
-        this.classList.toggle('active');
-        this.nextElementSibling.classList.toggle('dropdown-active');
-
-        let dropDownIndicator = this.querySelector('.dropdown-indicator');
-        dropDownIndicator.classList.toggle('bi-chevron-up');
-        dropDownIndicator.classList.toggle('bi-chevron-down');
-      }
-    })
-  });
 
   /**
    * Scroll top button
@@ -85,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
+  
   /**
    * Initiate glightbox
    */
@@ -205,3 +188,45 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+/**
+   * Hero type effect
+   */
+const words = [
+	'Arquitetura',
+  '&',
+	'Design de Interiores'
+];
+
+const slicedWords = words.map(word => {
+	return word.split('');
+});
+
+const typed = document.querySelector('.typed');
+
+let dynamicWord = '';
+let wordIndex = 0;
+let letterIndex = 0;
+
+setInterval(() => {
+	
+	if(letterIndex < words[wordIndex].length) {
+		dynamicWord += slicedWords[wordIndex][letterIndex];
+		letterIndex += 1;
+		typed.innerText = dynamicWord;
+	} else if(letterIndex === words[wordIndex].length) {
+		dynamicWord = dynamicWord.split('');
+		dynamicWord.pop();
+		dynamicWord = dynamicWord.join('');
+		typed.innerText = dynamicWord;
+		
+		if(dynamicWord.length === 0) {
+			wordIndex += 1;
+			letterIndex = 0;
+		}
+	}
+
+	(wordIndex >= words.length) ? wordIndex = 0 : wordIndex;
+	
+}, 200);
