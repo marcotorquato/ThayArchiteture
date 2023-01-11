@@ -4,15 +4,13 @@
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Roboto", sans-serif;
   --font-secondary: "Work Sans", sans-serif;
-  --font-third: "Syncopate", sans-serif;
 }
 
 /* Colors */
 :root {
   --color-default: #364d59;
-  --color-primary: #ebba4c;
-  --color-secondary: #ebba4c;
-  --color-third: #b2b5b8;
+  --color-primary: #1a21e9;
+  --color-secondary: #1a21e9;
 }
 
 /* Smooth scroll behavior */
@@ -27,7 +25,6 @@ body {
   font-family: var(--font-default);
   color: var(--color-default);
   overflow-x: hidden;
-  background-color: var(--color-third);
 }
 
 a {
@@ -36,7 +33,7 @@ a {
 }
 
 a:hover {
-  color: #ebba4c;
+  color: #1a21e9;
   text-decoration: none;
 }
 
@@ -46,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-third);
+  font-family: var(--font-primary);
 }
 
 /*--------------------------------------------------------------
@@ -198,7 +195,7 @@ section {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--color-third);
+  background: #fff;
   transition: all 0.6s ease-out;
 }
 
@@ -278,8 +275,6 @@ section {
 .header .logo h1 span {
   color: var(--color-primary);
 }
-
-
 
 /*--------------------------------------------------------------
 # Desktop Navigation
@@ -573,7 +568,7 @@ section {
 }
 
 .get-started .php-email-form {
-  background: var(--color-third);
+  background: #fff;
   padding: 30px;
   height: 100%;
 }
@@ -695,9 +690,8 @@ section {
 --------------------------------------------------------------*/
 .services .service-item {
   padding: 40px;
-  background: var(--color-third);
+  background: #fff;
   height: 100%;
-  text-align: center;
 }
 
 .services .service-item .icon {
@@ -1734,28 +1728,14 @@ section {
   background-repeat: no-repeat;
   overflow: hidden;
   z-index: 1;
-  transition-duration: 0.4s;
+  transition-duration: 0.5s;
 }
 
 .hero .carousel-item::before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   inset: 0;
-}
-
-#hero p {
- 
-  margin: 15px 0 0 0;
-  font-size: 26px;
-  font: var(--font-third);
-}
-
-#hero p span {
-  color: #ebba4c;
-  letter-spacing: 1px;
-  font-size: 26px;
-  
 }
 
 .hero .info {
@@ -1870,11 +1850,6 @@ section {
 .hero .carousel-control-prev:hover,
 .hero .carousel-control-next:hover {
   opacity: 0.9;
-}
-
-.social {
-  font-size: 26px;
-  padding-top: 100px;
 }
 
 /*--------------------------------------------------------------
@@ -2460,7 +2435,6 @@ section {
   font-size: 14px;
   padding: 80px 0 60px 0;
   position: relative;
-  
 }
 
 .footer:before {
@@ -2521,8 +2495,30 @@ section {
   padding-bottom: 12px;
 }
 
+.footer .footer-content .footer-links {
+  margin-bottom: 30px;
+}
 
+.footer .footer-content .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.footer .footer-content .footer-links ul li {
+  padding: 8px 0;
+}
+
+.footer .footer-content .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-content .footer-links ul a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
 
 .footer .footer-content .footer-links ul a:hover {
   color: #fff;
@@ -2533,10 +2529,12 @@ section {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.footer .footer-legal .credits {
+  padding-top: 4px;
+  font-size: 13px;
+  color: #fff;
+}
 
 .footer .footer-legal .credits a {
   color: var(--color-primary);
-}
-.footer .footer-legal .credits a:hover {
-  color: var(--color-third);
 }
