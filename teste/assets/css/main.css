@@ -2460,6 +2460,7 @@ section {
   font-size: 14px;
   padding: 80px 0 60px 0;
   position: relative;
+  
 }
 
 .footer:before {
@@ -2520,30 +2521,8 @@ section {
   padding-bottom: 12px;
 }
 
-.footer .footer-content .footer-links {
-  margin-bottom: 30px;
-}
 
-.footer .footer-content .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.footer .footer-content .footer-links ul li {
-  padding: 8px 0;
-}
-
-.footer .footer-content .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-.footer .footer-content .footer-links ul a {
-  color: rgba(255, 255, 255, 0.6);
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
-}
 
 .footer .footer-content .footer-links ul a:hover {
   color: #fff;
@@ -2554,12 +2533,10 @@ section {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.footer .footer-legal .credits {
-  padding-top: 4px;
-  font-size: 13px;
-  color: #fff;
-}
 
 .footer .footer-legal .credits a {
   color: var(--color-primary);
+}
+.footer .footer-legal .credits a:hover {
+  color: var(--color-third);
 }
