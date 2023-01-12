@@ -194,9 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
    * Hero type effect
    */
 const words = [
-	'Arquitetura',
+	'Arquiteta',
   '&',
-	'Design de Interiores'
+	'Designer de Interiores'
 ];
 
 const slicedWords = words.map(word => {
