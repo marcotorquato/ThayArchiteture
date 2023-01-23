@@ -847,6 +847,9 @@ section {
   margin: 0 auto 20px auto;
   list-style: none;
   text-align: center;
+  background: var(--color-third);
+  border-radius: 50px;
+  color: #fff;
 }
 
 .projects .portfolio-flters li {
@@ -859,6 +862,7 @@ section {
   line-height: 1;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
+  
 }
 
 .projects .portfolio-flters li:hover,
