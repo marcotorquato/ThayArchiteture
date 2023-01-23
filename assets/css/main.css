@@ -278,7 +278,9 @@ section {
 .header .logo h1 span {
   color: var(--color-primary);
 }
-
+.typed{
+  font-family: var(--font-primary);
+}
 
 
 /*--------------------------------------------------------------

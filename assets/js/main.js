@@ -204,4 +204,18 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
+  /* Animation Typed*/
+
+  const text = document.querySelector(".typed");
+  let index = 1;
+  let txt = "Arquitetura & Interiores";
+
+  function writeText() {
+  text.innerHTML = txt.slice(0, index);
+  index++;
+  if (index > txt.length) {
+    index = 1;
+  }
+}
+setInterval(writeText, 210);
 });
