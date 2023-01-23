@@ -50,6 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
+  /**
+   * Toggle mobile nav dropdowns
+   */
+  const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
+
+  navDropdowns.forEach(el => {
+    el.addEventListener('click', function(event) {
+      if (document.querySelector('.mobile-nav-active')) {
+        event.preventDefault();
+        this.classList.toggle('active');
+        this.nextElementSibling.classList.toggle('dropdown-active');
+
+        let dropDownIndicator = this.querySelector('.dropdown-indicator');
+        dropDownIndicator.classList.toggle('bi-chevron-up');
+        dropDownIndicator.classList.toggle('bi-chevron-down');
+      }
+    })
+  });
 
   /**
    * Scroll top button
@@ -66,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     }));
   }
-
   
   /**
    * Initiate glightbox
@@ -75,75 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
     selector: '.glightbox'
   });
 
-
   /**
    * Porfolio isotope and filter
    */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
-    /**
-   * Initiate portfolio lightbox 
-   */
-    const portfolioLightbox = GLightbox({
-      selector: '.portfolio-lightbox'
-    });
-  
-    /**
-     * Initiate portfolio details lightbox 
-     */
-    const portfolioDetailsLightbox = GLightbox({
-      selector: '.portfolio-details-lightbox',
-      width: '90%',
-      height: '90vh'
-    });
-  
-    /**
-     * Portfolio details slider
-     */
-    new Swiper('.portfolio-details-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      }
-    });
-
-  
-
-  /**
-   * Porfolio isotope and filter
-   
   let portfolionIsotope = document.querySelector('.portfolio-isotope');
 
   if (portfolionIsotope) {
@@ -174,9 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, false);
       });
 
-    });  
+    });
 
-  }*/
+  }
 
   /**
    * Init swiper slider with 1 slide at once in desktop view
@@ -254,45 +205,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-
-/**
-   * Hero type effect
-   */
-const words = [
-	'Arquiteta',
-  '&',
-	'Designer de Interiores'
-];
-
-const slicedWords = words.map(word => {
-	return word.split('');
-});
-
-const typed = document.querySelector('.typed');
-
-let dynamicWord = '';
-let wordIndex = 0;
-let letterIndex = 0;
-
-setInterval(() => {
-	
-	if(letterIndex < words[wordIndex].length) {
-		dynamicWord += slicedWords[wordIndex][letterIndex];
-		letterIndex += 1;
-		typed.innerText = dynamicWord;
-	} else if(letterIndex === words[wordIndex].length) {
-		dynamicWord = dynamicWord.split('');
-		dynamicWord.pop();
-		dynamicWord = dynamicWord.join('');
-		typed.innerText = dynamicWord;
-		
-		if(dynamicWord.length === 0) {
-			wordIndex += 1;
-			letterIndex = 0;
-		}
-	}
-
-	(wordIndex >= words.length) ? wordIndex = 0 : wordIndex;
-	
-}, 200);
