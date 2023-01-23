@@ -63,7 +63,6 @@ section {
 
 .section-header {
   text-align: center;
-  padding-bottom: 70px;
 }
 
 .section-header h2 {
@@ -2496,7 +2495,14 @@ section {
   height: 36px;
   transition: 0.3s;
 }
+.social-link {
+  display: inline-flex;
+  font-size: 25px;
+}
 
+.social-link a {
+  padding:5px;
+}
 .footer .footer-content .social-links a:hover {
   background: var(--color-primary);
   text-decoration: none;
